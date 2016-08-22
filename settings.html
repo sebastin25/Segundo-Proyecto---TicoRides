@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>TicoRides</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/table.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+
+
+<body>
+
+    <header class="row">
+
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="settings.html">Settings</a></li>
+            <li class="divider"></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="dashboard.html" class="brand-logo">TicoRides</a>
+                    <img src="img/user_placeholder.png" alt="" class="circle" id="user-image">
+                    <ul class="right hide-on-med-and-down">
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Welcome Pepito2015<i class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="col s8 offset-s1">
+            <img src="img/carpooling.jpg" alt="logo webpage" id="header-image">
+        </div>
+
+    </header>
+
+
+    <div class="container">
+
+        <nav id="menu">
+            <ul class="left hide-on-med-and-down">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="dashboard.html">Rides</a></li>
+                <li id="active"><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+
+        <br>
+
+        <nav id="breadcrumb">
+            <div class="nav-wrapper">
+                <a href="dashboard.html" class="breadcrumb">Dashboard</a>
+                <a href="settings.html" class="breadcrumb">Settings</a>
+            </div>
+        </nav>
+
+
+        <div class="row ">
+            <form class="col s5 offset-s1">
+
+                <div class="input-field">
+                    <input id="full_name" type="text" class="validate" value="Pepito Probando">
+                    <label for="full_name">Full Name</label>
+                </div>
+
+                <div class="input-field">
+                    <input id="speed" type="text" class="validate" value="60 km/h">
+                    <label for="speed">Speed Average</label>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea" placeholder="Something about me goes here"></textarea>
+                        <label for="textarea1">About me</label>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <a href="dashboard.html">Cancel</a>
+                </div>
+                <div class="col s6">
+                    <a class="waves-effect waves-light btn" href="dashboard.html">Save</a>
+                </div>
+
+
+
+            </form>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>TicoRides</title>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+
+
+<body>
+
+
+    <header>
+
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="index.html" class="brand-logo">TicoRides</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="registro.html">Registro</a></li>
+                    </ul>
+
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="registro.html">Registro</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="row">
+            <div class="col s12 l8 offset-l4">
+                <img src="img/carpooling.jpg" alt="logo webpage" id="header-image">
+                <h1 class="main-title">Welcome to TicoRides.com</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="col s12 l12">
+
+            <h4>Search for a ride</h4>
+            <table id="buscador">
+                <tr>
+                    <td>
+                        <label> From: </label>
+                        <input id="autocomplete" placeholder="Enter your address" type="text" />
+                    </td>
+
+                    <td>
+                        <label> To: </label>
+                        <input id="autocomplete2" placeholder="Enter your address" type="text" />
+
+                    </td>
+                    <td>
+                        <button class="btn waves-effect waves-light" type="submit" name="action" onclick="addRow()"><i class="small material-icons" id="search-icon">search</i>Find my Ride!
+                        </button>
+                    </td>
+                </tr>
+
+            </table>
+
+
+        </div>
+        <div class="col s12 l12">
+            <table class="striped responsive-table">
+                <thead>
+                    <tr>
+                        <th><b>User</b></th>
+                        <th><b>Start</b></th>
+                        <th><b>End</b></th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody id="myTableData">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+
+            <ul>
+                <li>Start from: <span>San Jose, San José, Costa Rica</span></li>
+                <li>End: <span>Alajuela - La Guacima, Alajuela, Costa Rica</span></li>
+                <li>Description: <span>From Pali on San Jose to the park on Alajuela </span></li>
+                <br>
+                <li>Departure: <span> 7:00 am</span></li>
+                <li>Estimated Arrival: <span> 8:00 am</span></li>
+
+                <br>
+                <br>
+                <ul>Days
+                    <li>Monday</li>
+                    <li>Thursday</li>
+                    <li>Sunday</li>
+                </ul>
+            </ul>
+
+
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?&libraries=places&callback=initAutocomplete" async defer></script>
+    <script src="js/gmap.js"></script>
+    
+    <script src="js/rides.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+
+
+<body>
+
+
+    <header class="row">
+
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="index.html" class="brand-logo">TicoRides</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="registro.html">Registro</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+        <div class="col s8 offset-s4">
+            <img src="img/carpooling.jpg" alt="logo webpage" id="header-image">
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <form class="col s4 offset-s3">
+                <div class="row">
+                    <div class="input-field">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">Username</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">vpn_key</i>
+                        <input id="icon_telephone" type="tel" class="validate">
+                        <label for="icon_telephone">Password</label>
+                    </div>
+
+                    <br>
+                    <div>
+                        Not a user? <a href="registro.html">&nbsp;Register here</a>
+                    </div>
+                    <br>
+                    <a class="waves-effect waves-light btn" href="dashboard.html">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
