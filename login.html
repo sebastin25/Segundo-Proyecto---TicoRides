@@ -23,8 +23,15 @@
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="index.html" class="brand-logo">TicoRides</a>
-                    <ul class="right hide-on-med-and-down">
+                    <a href="index.html" class="brand-logo left">TicoRides</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="registro.html">Registro</a></li>
+                    </ul>
+
+                    <ul class="side-nav" id="mobile-demo">
                         <li><a href="login.html">Login</a></li>
                         <li><a href="registro.html">Registro</a></li>
                     </ul>
@@ -33,24 +40,24 @@
         </div>
 
 
-        <div class="col s8 offset-s4">
+        <div class="col s12 m6 l8 offset-l4">
             <img src="img/carpooling.jpg" alt="logo webpage" id="header-image">
         </div>
     </header>
 
     <div class="container">
         <div class="row">
-            <form class="col s4 offset-s3">
+            <form class="col s11 m10 l5 offset-l3">
                 <div class="row">
                     <div class="input-field">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="icon_prefix" type="text" class="validate">
-                        <label for="icon_prefix">Username</label>
+                        <input id="username" type="text" class="validate">
+                        <label for="username">Username</label>
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">vpn_key</i>
-                        <input id="icon_telephone" type="tel" class="validate">
-                        <label for="icon_telephone">Password</label>
+                        <input id="password" type="tel" class="validate" id>
+                        <label for="password">Password</label>
                     </div>
 
                     <br>
@@ -58,11 +65,13 @@
                         Not a user? <a href="registro.html">&nbsp;Register here</a>
                     </div>
                     <br>
-                    <a class="waves-effect waves-light btn" href="dashboard.html">Login</a>
+                    <a id="login" class="waves-effect waves-light btn">Login</a>
                 </div>
             </form>
         </div>
     </div>
+    
+    <script src="js/rides.js"></script>
 </body>
 
 </html>

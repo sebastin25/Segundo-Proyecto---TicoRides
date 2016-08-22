@@ -2,9 +2,10 @@ var RIDES = {
     property: 10,
 
     initialize: function () {
-        RIDES.loadRides();
+        //  RIDES.loadRides();
         $(".button-collapse").sideNav();
         $(".dropdown-button").dropdown();
+        $('.modal-trigger').leanModal();
     },
 
     initializeEvents: function () {
@@ -22,38 +23,59 @@ var RIDES = {
                     aboutme: ""
                 };
                 if (!(RIDES.addUser(user))) {
-                    alert('Successful registration');
-                    location.href = "index.html";
                     /*
+                    alert('Successful registration');
+                    location.href = "index.html"
+                    */
                      Materialize.toast('Successful registration', 5000, 'rounded', function () {
                          location.href = "index.html";
                      });
-                     */
+                     
                 } else {
                     alert('User already exist!');
                 }
 
 
             });
-        }
+        };
 
+        //BuscarRides
+        if (document.getElementById('buscar')) {
+            document.getElementById('buscar').addEventListener('click', function () {
+                // obtener la información del form
+                var place = {
+                    start: document.getElementById('autocomplete').value,
+                    end: document.getElementById('autocomplete2').value
+                };
+                RIDES.loadRides(place);
+            });
+        };
+
+        if (document.getElementById('login')) {
+            document.getElementById('login').addEventListener('click', function () {
+                // obtener la información del form
+                RIDES.Login();
+            });
+        };
     },
     //falta
-    loadRides: function () {
+    loadRides: function (place) {
         if (document.getElementById('myTableData')) {
-            //leer de localStorage los rides
+            RIDES.clearTable();
             var rides = [];
 
             if (localStorage.getItem('rides')) {
                 rides = JSON.parse(localStorage.getItem('rides'));
             }
-            //agregar cada ride al DOM
-            rides.forEach(function (ride, index, rides) {
-                // crear una HTML fila
-                var row = "<tr><td>" + ride.name + "</td><td>" + ride.userName + "</td></tr>";
 
-                // agregar a la tabla
+            rides.forEach(function (ride, index, rides) {
                 var table = document.getElementById("myTableData");
+
+                if (place.start === "" || place.end === "") {
+                    var row = "<tr><td>" + ride.userName + "</td><td>" + ride.start + "</td><td>" + ride.end + "</td><td>" + '<button data-target="modal1" class="btn modal-trigger">View</button>' + "</td></tr>";
+                } else if (ride.start === place.start && ride.end === place.end) {
+                    var row = "<tr><td>" + ride.userName + "</td><td>" + ride.start + "</td><td>" + ride.end + "</td><td>" + '<button data-target="modal1" class="btn modal-trigger">View</button>' + "</td></tr>";
+                }
                 table.innerHTML = table.innerHTML + row;
             });
 
@@ -67,12 +89,13 @@ var RIDES = {
         if (document.getElementById('username') && document.getElementById('password')) {
             var users = [];
             if (localStorage.getItem('users')) {
-                users = JSON.parse(localStorage.getItem('rides'));
+                users = JSON.parse(localStorage.getItem('users'));
             }
 
             users.forEach(function (user, index, users) {
-                if (user.userName == document.getElementById('username').value) {
+                if (user.userName == document.getElementById('username').value && user.password == document.getElementById('password').value) {
                     localStorage.setItem('islogin', JSON.stringify(user.userName));
+                    location.href = "dashboard.html"
                 }
             });
         }
@@ -106,7 +129,16 @@ var RIDES = {
         }
         rides.push(ride);
         localStorage.setItem('rides', JSON.stringify(rides));
+    },
+
+    clearTable: function () {
+        if (document.getElementById('myTableData')) {
+            document.getElementById("myTableData").innerHTML = "";
+        };
+
     }
+
+
 };
 
 RIDES.initialize();

@@ -24,7 +24,7 @@
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="index.html" class="brand-logo">TicoRides</a>
+                    <a href="index.html" class="brand-logo left">TicoRides</a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -41,7 +41,7 @@
         </div>
 
         <div class="row">
-            <div class="col s12 l8 offset-l4">
+            <div class="col s12 m8 l8 offset-l4 offset-m4">
                 <img src="img/carpooling.jpg" alt="logo webpage" id="header-image">
                 <h1 class="main-title">Welcome to TicoRides.com</h1>
             </div>
@@ -49,8 +49,7 @@
     </header>
 
     <div class="row">
-        <div class="col s12 l12">
-
+        <div class="col s12 m12 l12">
             <h4>Search for a ride</h4>
             <table id="buscador">
                 <tr>
@@ -58,23 +57,21 @@
                         <label> From: </label>
                         <input id="autocomplete" placeholder="Enter your address" type="text" />
                     </td>
-
                     <td>
                         <label> To: </label>
                         <input id="autocomplete2" placeholder="Enter your address" type="text" />
-
                     </td>
                     <td>
-                        <button class="btn waves-effect waves-light" type="submit" name="action" onclick="addRow()"><i class="small material-icons" id="search-icon">search</i>Find my Ride!
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="buscar" ><i class="small material-icons" id="search-icon">search</i>Find my Ride!
                         </button>
                     </td>
                 </tr>
-
             </table>
-
-
         </div>
-        <div class="col s12 l12">
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12 l12">
             <table class="striped responsive-table">
                 <thead>
                     <tr>
@@ -117,9 +114,8 @@
         </div>
     </div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?&libraries=places&callback=initAutocomplete" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9ooUCtZH3xnszc2do7E4n7wWDJrx8PEE&libraries=places&callback=initAutocomplete" async defer></script>
     <script src="js/gmap.js"></script>
-    
     <script src="js/rides.js"></script>
 
 </body>
