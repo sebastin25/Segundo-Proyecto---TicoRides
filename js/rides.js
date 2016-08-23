@@ -2,37 +2,41 @@ var RIDES = {
     property: 10,
 
     initialize: function () {
-        //  RIDES.loadRides();
         $(".button-collapse").sideNav();
         $(".dropdown-button").dropdown();
-        $('.modal-trigger').leanModal();
+
+
     },
 
     initializeEvents: function () {
         //boton registro
         if (document.getElementById('register')) {
             document.getElementById('register').addEventListener('click', function () {
-                // obtener la información del form
-                var user = {
-                    userName: document.getElementById('username').value,
-                    password: document.getElementById('password').value,
-                    firstName: document.getElementById('first_name').value,
-                    lastName: document.getElementById('last_name').value,
-                    phone: document.getElementById('phone').value,
-                    speed: "60",
-                    aboutme: ""
-                };
-                if (!(RIDES.addUser(user))) {
-                    /*
-                    alert('Successful registration');
-                    location.href = "index.html"
-                    */
-                     Materialize.toast('Successful registration', 5000, 'rounded', function () {
-                         location.href = "index.html";
-                     });
-                     
+
+                // validar si existe un error en el formulario
+                if (document.getElementsByClassName('invalid').length) {
+
+                    alert('Por favor revise los errores en el formulario antes de continuar.');
                 } else {
-                    alert('User already exist!');
+
+                    // obtener la información del form
+                    var user = {
+                        userName: document.getElementById('username').value,
+                        password: document.getElementById('password').value,
+                        firstName: document.getElementById('first_name').value,
+                        lastName: document.getElementById('last_name').value,
+                        phone: document.getElementById('phone').value,
+                        speed: "60",
+                        aboutme: ""
+                    };
+                    if (!(RIDES.addUser(user))) {
+                        Materialize.toast('Successful registration', 5000, 'rounded', function () {
+                            location.href = "index.html";
+                        });
+
+                    } else {
+                        alert('User already exist!');
+                    }
                 }
 
 
@@ -57,8 +61,17 @@ var RIDES = {
                 RIDES.Login();
             });
         };
+
+        if (document.getElementById('logout')) {
+            document.getElementById('logout').addEventListener('click', function () {
+                // obtener la información del form
+                RIDES.logout();
+            });
+        };
+
     },
-    //falta
+
+    //falta arreglar modal
     loadRides: function (place) {
         if (document.getElementById('myTableData')) {
             RIDES.clearTable();
@@ -76,14 +89,20 @@ var RIDES = {
                 } else if (ride.start === place.start && ride.end === place.end) {
                     var row = "<tr><td>" + ride.userName + "</td><td>" + ride.start + "</td><td>" + ride.end + "</td><td>" + '<button data-target="modal1" class="btn modal-trigger">View</button>' + "</td></tr>";
                 }
+                
+                
+                
                 table.innerHTML = table.innerHTML + row;
+                $(document).ready(function () {
+                    $('.modal-trigger').leanModal();
+                });
+
             });
 
         }
 
 
     },
-
 
     Login: function () {
         if (document.getElementById('username') && document.getElementById('password')) {
@@ -100,6 +119,14 @@ var RIDES = {
             });
         }
     },
+
+    logout: function () {
+        if (localStorage.getItem('islogin')) {
+            localStorage.setItem('islogin', JSON.stringify(""));
+        }
+        location.href = "index.html";
+    },
+
 
     //falta arreglar detalles menores
     addUser: function (user) {
