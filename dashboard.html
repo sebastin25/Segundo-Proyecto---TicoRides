@@ -5,7 +5,7 @@
     <title>TicoRides</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/custom.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/jquery-3.0.0.min.js"></script>
     <script src="js/materialize.min.js"></script>
@@ -22,20 +22,37 @@
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="settings.html">Settings</a></li>
             <li class="divider"></li>
-            <li><a href="index.html">Logout</a></li>
+            <li><a id="logout1">Logout</a></li>
         </ul>
 
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="dashboard.html" class="brand-logo">TicoRides</a>
-                    <img src="img/user_placeholder.png" alt="" class="circle" id="user-image">
+                    <a href="dashboard.html" class="brand-logo left">TicoRides</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <img src="img/user_placeholder.png" alt="" class="circle hide-on-med-and-down" id="user-image">
                     <ul class="right hide-on-med-and-down">
-                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Welcome Pepito2015<i class="material-icons right">arrow_drop_down</i></a></li>
+                        <li>
+                            <a class="dropdown-button" href="#!" data-activates="dropdown1" id="userName"><i class="material-icons right">arrow_drop_down</i></a>
+                        </li>
                     </ul>
+
+                    <ul class="side-nav" id="mobile-demo">
+                        <li>
+                            <a id="userNameSide"></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a id="logout">Logout</a></li>
+                    </ul>
+
                 </div>
             </nav>
         </div>
+
+
+
+
 
         <div class="col s12 m8 l8 offset-m1 offset-l1">
             <img src="img/carpooling.jpg" alt="logo webpage" id="header-image">
@@ -47,7 +64,7 @@
     <div class="container">
 
         <nav id="menu">
-            <ul class="left hide-on-med-and-down">
+            <ul class="left">
                 <li id="active"><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="dashboard.html">Rides</a></li>
                 <li><a href="settings.html">Settings</a></li>
@@ -83,37 +100,8 @@
                             <th><b>Actions</b></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="myTableData1">
 
-                        <tr>
-                            <td>Work</td>
-                            <td>Alajuela - La Guacima, Alajuela, Costa Rica</td>
-                            <td>San Jose, San José, Costa Rica</td>
-                            <td>
-                                <a href="rides_edit.html">Edit</a> -
-                                <a href="rides_delete.html">Delete</a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Work1</td>
-                            <td>San Josecito, Heredia Province, Costa Rica</td>
-                            <td>Calle El Progreso, Heredia, Costa Rica</td>
-                            <td>
-                                <a href="rides_edit.html">Edit</a> -
-                                <a href="rides_delete.html">Delete</a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Home</td>
-                            <td>San Jose, San José, Costa Rica</td>
-                            <td>Alajuela - La Guacima, Alajuela, Costa Rica</td>
-                            <td>
-                                <a href="rides_edit.html">Edit</a> -
-                                <a href="rides_delete.html">Delete</a>
-                            </td>
-                        </tr>
                     </tbody>
 
 

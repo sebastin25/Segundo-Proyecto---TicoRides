@@ -5,11 +5,10 @@
     <title>TicoRides</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/custom.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/jquery-3.0.0.min.js"></script>
     <script src="js/materialize.min.js"></script>
-    <script src="js/table.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 </head>
@@ -23,17 +22,28 @@
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="settings.html">Settings</a></li>
             <li class="divider"></li>
-            <li><a href="index.html">Logout</a></li>
+            <li><a id="logout1">Logout</a></li>
         </ul>
 
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="dashboard.html" class="brand-logo">TicoRides</a>
-                    <img src="img/user_placeholder.png" alt="" class="circle" id="user-image">
+                    <a href="dashboard.html" class="brand-logo left">TicoRides</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <img src="img/user_placeholder.png" alt="" class="circle hide-on-med-and-down" id="user-image">
                     <ul class="right hide-on-med-and-down">
-                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Welcome Pepito2015<i class="material-icons right">arrow_drop_down</i></a></li>
+                        <li>
+                            <a class="dropdown-button" href="#!" data-activates="dropdown1" id="userName"><i class="material-icons right">arrow_drop_down</i></a>
+                        </li>
                     </ul>
+
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a id="userNameSide"></a></li>
+                        <li class="divider"></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a id="logout">Logout</a></li>
+                    </ul>
+
                 </div>
             </nav>
         </div>
@@ -48,10 +58,10 @@
     <div class="container">
 
         <nav id="menu">
-            <ul class="left hide-on-med-and-down">
+            <ul class="left">
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li id="active"><a href="dashboard.html">Rides</a></li>
-                <li ><a href="settings.html">Settings</a></li>
+                <li><a href="settings.html">Settings</a></li>
             </ul>
         </nav>
 
@@ -70,13 +80,13 @@
             <form>
 
                 <div class="input-field col s11 m5 l5 offset-m1 offset-l1">
-                    <input id="ride_name" type="text" class="validate" >
+                    <input id="ride_name" type="text" class="validate">
                     <label for="ride_name">Ride Name</label>
                 </div>
                 <div class="col s12 m12 l12"></div>
                 <div class="col s11 m5 l5 offset-m1 offset-l1">
                     <div class="input-field">
-                        <input id="autocomplete" placeholder="Enter your address" type="text"/>
+                        <input id="autocomplete" placeholder="Enter your address" type="text" />
                         <label for="autocomplete"> Start: </label>
 
                     </div>
@@ -89,7 +99,6 @@
 
                     </div>
                 </div>
-
 
                 <div class="input-field col s11 m5 l5 offset-m1 offset-l1">
                     <textarea id="textarea1" class="materialize-textarea" placeholder="Description about the ride"></textarea>
@@ -112,7 +121,7 @@
                         <label for="departure">Departure</label>
                     </div>
                     <div class="input-field">
-                        <input id="arrival" type="text" class="validate" >
+                        <input id="arrival" type="text" class="validate">
                         <label for="arrival">Estimated Arrival</label>
                     </div>
                 </form>
@@ -120,33 +129,34 @@
                 <form class="col s11 m5 l5 offset-s1 offset-m1 offset-l1">
 
                     <h5>Select days</h5>
+
                     <p>
-                        <input type="checkbox" class="filled-in" id="monday"  />
-                        <label for="monday">Monday</label>
+                        <input type="checkbox" class="filled-in" id="monday" />
+                        <label for="monday" id="0">Monday</label>
                     </p>
                     <p>
                         <input type="checkbox" class="filled-in" id="tuesday"  />
-                        <label for="tuesday">Tuesday</label>
+                        <label for="tuesday" id="1">Tuesday</label>
                     </p>
                     <p>
-                        <input type="checkbox" class="filled-in" id="wednesday"  />
-                        <label for="wednesday">Wednesday</label>
+                        <input type="checkbox" class="filled-in" id="wednesday" />
+                        <label for="wednesday" id="2">Wednesday</label>
                     </p>
                     <p>
                         <input type="checkbox" class="filled-in" id="thursday"  />
-                        <label for="thursday">Thursday</label>
+                        <label for="thursday" id="3">Thursday</label>
                     </p>
                     <p>
                         <input type="checkbox" class="filled-in" id="friday"  />
-                        <label for="friday">Friday</label>
+                        <label for="friday" id="4">Friday</label>
                     </p>
                     <p>
-                        <input type="checkbox" class="filled-in" id="saturday"  />
-                        <label for="saturday">Saturday</label>
+                        <input type="checkbox" class="filled-in" id="saturday" />
+                        <label for="saturday" id="5">Saturday</label>
                     </p>
                     <p>
-                        <input type="checkbox" class="filled-in" id="sunday"  />
-                        <label for="sunday">Sunday</label>
+                        <input type="checkbox" class="filled-in" id="sunday" />
+                        <label for="sunday" id="6">Sunday</label>
                     </p>
                 </form>
 
@@ -158,7 +168,7 @@
                 <a href="dashboard.html">Cancel</a>
             </div>
             <div class="col s5 m5 l5 offset-s1 offset-m1 offset-l1">
-                <a class="waves-effect waves-light btn" href="dashboard_1.html">Save</a>
+                <a class="waves-effect waves-light btn" id="addRide">Save</a>
             </div>
         </div>
 
@@ -167,6 +177,7 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?&libraries=places&callback=initAutocomplete" async defer></script>
     <script src="js/gmap.js"></script>
+    <script src="js/rides.js"></script>
 </body>
 
 </html>

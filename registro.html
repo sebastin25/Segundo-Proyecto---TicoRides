@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>Login</title>
+    <title>Register</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/custom.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/jquery-3.0.0.min.js"></script>
     <script src="js/materialize.min.js"></script>
@@ -54,28 +54,28 @@
             <div class="col s12 m6 l4 offset-m2 offset-l3" id="register_form">
 
                 <div class="input-field">
-                    <input id="first_name" type="text" class="validate" required>
-                    <label for="first_name">First Name</label>
+                    <input id="first_name" type="text" class="validate" pattern="^[a-zA-Z]+$" required>
+                    <label for="first_name" required data-error="Only letters">First Name</label>
                 </div>
 
                 <div class="input-field">
-                    <input id="last_name" type="text" class="validate" required>
-                    <label for="last_name">Last Name</label>
+                    <input id="last_name" type="text" class="validate" pattern="^[a-zA-Z]+$" required>
+                    <label for="last_name" data-error="Only letters">Last Name</label>
                 </div>
 
                 <div class="input-field">
-                    <input placeholder="22345678" id="phone" class="validate" type='tel' pattern="\d{4}\d{4}" required>
-                    <label for="phone">Phone</label>
+                    <input placeholder="22345678" id="phone" class="validate" type='tel' pattern="\d{4}\d{4}">
+                    <label for="phone" required data-error="Phone format: 25834967">Phone</label>
                 </div>
 
                 <div class="input-field">
-                    <input id="username" type="text" class="validate" required>
-                    <label for="username">Username</label>
+                    <input id="username" type="text" class="validate" pattern=".{8,}" required>
+                    <label for="username" data-error="Minimum Lenght: 8">Username</label>
                 </div>
 
                 <div class="input-field">
-                    <input id="password" type="password" class="validate" onchange="cpassword.pattern = this.value;" required>
-                    <label for="password">Password</label>
+                    <input id="password" type="password" class="validate" pattern=".{8,}" onchange="cpassword.pattern = this.value;" required>
+                    <label for="password" data-error="Minimum Lenght: 8">Password</label>
                 </div>
 
                 <div class="input-field">

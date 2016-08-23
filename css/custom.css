@@ -38,38 +38,40 @@
     margin-right: 10px;
 }
 
-#modal1 li {
+#myDiv li {
     list-style: circle inside;
     list-style-type: disc;
 }
 
 #breadcrumb,
 .breadcrumb,
-.breadcrumb::before , #menu{
+.breadcrumb::before,
+#menu {
     background-color: transparent;
     color: black !important;
     box-shadow: 0px 0px 0px #ffffff !important;
 }
 
 #menu a {
-   transition: background-color .3s;
+    transition: background-color .3s;
     color: black !important;
     background-color: gray;
     border: 1px solid #514b4b;
 }
 
-
-#menu #active a{
+#menu #active a {
     background-color: white;
 }
+
 #menu a:hover {
-  background-color: #a79c81;
+    background-color: #a79c81;
 }
 
-.rides{
-     border: 2px solid #D4E2F1;
+.rides {
+    border: 2px solid #D4E2F1;
 }
 
-.pac-container, .pac-item {
+.pac-container,
+.pac-item {
     width: inherit !important;
 }

@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/custom.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/jquery-3.0.0.min.js"></script>
     <script src="js/materialize.min.js"></script>
@@ -62,7 +62,7 @@
                         <input id="autocomplete2" placeholder="Enter your address" type="text" />
                     </td>
                     <td>
-                        <button class="btn waves-effect waves-light" type="submit" name="action" id="buscar" ><i class="small material-icons" id="search-icon">search</i>Find my Ride!
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="buscar"><i class="small material-icons" id="search-icon">search</i>Find my Ride!
                         </button>
                     </td>
                 </tr>
@@ -87,32 +87,11 @@
         </div>
     </div>
 
-    <div id="modal1" class="modal">
-        <div class="modal-content">
+    <div id="myDiv">
 
-            <ul>
-                <li>Start from: <span>San Jose, San José, Costa Rica</span></li>
-                <li>End: <span>Alajuela - La Guacima, Alajuela, Costa Rica</span></li>
-                <li>Description: <span>From Pali on San Jose to the park on Alajuela </span></li>
-                <br>
-                <li>Departure: <span> 7:00 am</span></li>
-                <li>Estimated Arrival: <span> 8:00 am</span></li>
-
-                <br>
-                <br>
-                <ul>Days
-                    <li>Monday</li>
-                    <li>Thursday</li>
-                    <li>Sunday</li>
-                </ul>
-            </ul>
-
-
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-        </div>
     </div>
+
+
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9ooUCtZH3xnszc2do7E4n7wWDJrx8PEE&libraries=places&callback=initAutocomplete" async defer></script>
     <script src="js/gmap.js"></script>
